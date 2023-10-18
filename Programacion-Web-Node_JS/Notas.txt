@@ -1,0 +1,31 @@
+End points
+Los end points son las rutas o conexiones que existen 
+Se definiran en otra carpeta
+
+Promesa -> user.save().then() que es una promesa ?
+
+Operaciones de crut -> que es ?
+
+
+
+Para conectar la base de datos atlas lo que se tiene que hacer es 
+que se tiene que instalar un modulo:
+    $ npm i(install) mongoose
+Para proteger el enlace con la DB se descargara un modulo:
+    $npm i dotenv
+El url que conecto a la base de datos se optine 
+de la plataforma de mongodb atlas
+
+
+/* 
+    se instalara un modulo nodemon que ayuda a reiniciar el servidor
+    cada vez que se hagan cambios en el codigo de forma automatica.
+        nmp install nodemon -D 
+*/
+
+npm install cors
+
+El error que estás viendo indica un problema de política de mismo origen (CORS) en tu solicitud Fetch. Esto significa que tu servidor no está configurado para permitir solicitudes desde un origen diferente al suyo, lo que está bloqueando la solicitud desde tu aplicación web Frontend.
+
+Para solucionar este problema, debes configurar tu servidor Node.js con Express para permitir solicitudes CORS desde tu aplicación web Frontend. Puedes hacer esto utilizando el middleware cors. Asegúrate de instalar primero el paquete cors si aún no lo has hecho:
+Luego, en tu archivo de servidor principal, donde configuras Express, puedes usar el middleware cors de la siguiente manera:

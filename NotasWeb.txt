@@ -20,3 +20,12 @@ reservas pendientes, reservas respondidas
 El administrador ve una consulta para reservar de un aula de 150 pero mas abajo hay uno de 200 entonces la prioridad se tendria que 
 reconsiderar
  que opere con una bd cloud de aulas
+
+
+Investigar mongo db para tener una bd deployada.
+--------------------------------------------------
+Dependencias
+node.js version v18.18.1
+npm version 9.8.1
+solo se tiene que descargar el instalador LTS.
+--------------------------------------------------

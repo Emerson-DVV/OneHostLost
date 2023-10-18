@@ -1,0 +1,83 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Emerson Vera",
+    "age": "24",
+    "email": "emersonvera@gmail.com"
+}
+###
+GET http://localhost:9000/api/users HTTP/1.1
+###
+GET http://localhost:9000/api/users/652b2568564ae20408bcc56a HTTP/1.1
+###
+PUT http://localhost:9000/api/users/652c729a33869b5c169f6701 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Emerson Vera",
+    "age": "24"
+}
+###
+DELETE http://localhost:9000/api/users/652c725733869b5c169f66fc HTTP/1.1
+###
+POST http://localhost:9000/api/classrooms HTTP/1.1
+Content-Type: application/json
+
+{
+    "classroom": "690A",
+    "capacity": 50,
+    "description": "Es un aula mediana con acceso a data"
+}
+###
+GET http://localhost:5500/api/classrooms HTTP/1.1
+###
+GET http://localhost:9000/api/classrooms/652f5d20f382354f73e7da25 HTTP/1.1
+###
+PUT http://localhost:9000/api/classrooms/652f5d20f382354f73e7da25 HTTP/1.1
+Content-Type: application/json
+
+{
+    "classroom": "690",
+    "capacity": 40,
+    "description": "Es un aula pequeña con acceso a data"
+}
+###
+DELETE http://localhost:9000/api/classrooms/652f5d20f382354f73e7da25 HTTP/1.1
+###
+POST http://localhost:9000/api/states HTTP/1.1
+Content-Type: application/json
+
+{
+    "classroom": "652fd3b6c2d841d032938125",
+    "states":[
+        {
+            "date": "2023-10-18",
+            "hour": "12:45 - 2:15",
+            "type": "pendiente",
+            "user":"652b2568564ae20408bcc56a"
+        }
+    ]
+}
+###
+GET http://localhost:9000/api/states HTTP/1.1
+###
+GET http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
+###
+PUT http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
+Content-Type: application/json
+
+{
+    "classroom": "652fd3b6c2d841d032938125",
+    "states":[
+        {
+            "date": "2023-10-18",
+            "hour": "12:45 - 2:15",
+            "type": "Ocupado",
+            "user":"652b2568564ae20408bcc56a"
+        }
+    ]
+}
+###
+DELETE http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
