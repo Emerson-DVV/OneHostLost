@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es-BO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>UMSS</title>
+
+</head>
+
+<body>
+    <div class="w3-container w3-green w3-center">
+        <h2 style="text-shadow:1px 1px 0 #444">Reserva de Aulas</h2>
+    </div>
+    <div class="w3-container w3-responsive">
+        <div class="inner-menu w3-row-padding">
+            <form method="POST">
+                <h4>Aula</h4>
+                <select class="w3-select" id="select-aula" name="option">
+                    <option value="id690" disabled selected>Seleccionar aula</option>
+                    <option value="">690</option>
+                    <option value="">690A</option>
+                    <option value="">690B</option>
+                    <option value="">690C</option>
+                    <option value="">690D</option>
+                    <option value="">mas aulas...</option>
+                </select>
+            </form>
+            <form>
+                <h4>Capacidad</h4>
+                <select class="w3-select" id="capacidad">
+                    <option value="" disabled selected>Cantidad de Alumnos</option>
+                    <option value="">20</option>
+                    <option value="">30</option>
+                    <option value="">40</option>
+                    <option value="">50</option>
+                    <option value="ocultar">otro...</option>
+                </select>
+            </form>
+            <form>
+                <h4>Fecha</h4>
+                <input class="w3-input" type="date">
+            </form>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <div class="w3-responsive tabla-container">
+            <table class="w3-table-all">
+                <tr class="w3-green">
+                    <th>Horario</th>
+                    <th>Materia</th>
+                </tr>
+                <tr>
+                    <td>6:45-8:15</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>8:15-9:45</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>9:45-11:15</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>11:15-12:45</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>12:45-14:15</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>14:15-15:45</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>15:45-17:15</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>17:15-18:45</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>18:45-20:15</td>
+                    <td>Disponible</td>
+                </tr>
+                <tr>
+                    <td>20:15-21:45</td>
+                    <td>Disponible</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="w3-container w3-center">
+        <div id="login" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:500px">
+
+                <div class="w3-center"><br>
+                    <span onclick="document.getElementById('login').style.display='none'"
+                        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                    <img src="images/usuario.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+                </div>
+
+                <form class="w3-container" action="/action_page.php">
+                    <div class="w3-section">
+                        <label><b>Nombre de Usuario</b></label>
+                        <input class="w3-input w3-border w3-margin-bottom" type="text"
+                            placeholder="Ingrese Nombre de Usuario" name="usrname" required>
+                        <label><b>Contraseña</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Ingrese Contraseña" name="psw"
+                            required>
+                        <button class="w3-button w3-block w3-green w3-section w3-padding"
+                            type="submit">Ingresar</button>
+                        <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
+                    </div>
+                </form>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button onclick="document.getElementById('login').style.display='none'" type="button"
+                        class="w3-button w3-red">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container w3-center w3-margin-top">
+        <div class="w3-bar">
+            <button class="w3-button w3-green w3-round"
+                onclick="document.getElementById('reservation').style.display='block'">Reservar</button>
+            <button class="w3-button w3-green w3-round"
+                onclick="document.getElementById('login').style.display='block'">Ingresar</button>
+        </div>
+    </div>
+    <div class="w3-container w3-center">
+        <div id="reservation" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:500px">
+
+                <div class="w3-center"><br>
+                    <span onclick="document.getElementById('reservation').style.display='none'"
+                        class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+                </div>
+                <form class="w3-container" action="">
+                    <div class="w3-section">
+                        <label><b>Descripcion</b></label>
+                        <div class="w3-container w3-border w3-large">
+                            <div class="w3-left-align">
+                                <p>Aula: 690.</p>
+                            </div>
+                            <div class="w3-left-align">
+                                <p>Fecha: 04/10/2023.</p>
+                            </div>
+                            <div class="w3-left-align">
+                                <p>
+                                    El aula cuenta con capacidad de 50 estudiantes.
+                                </p>
+                            </div>
+                        </div>
+                        <label><b>Motivo</b></label>
+                        <input class="w3-input w3-border" type="text" placeholder="Descripcion del motivo de la reserva"
+                            name="desc" required>
+                        <button class="w3-button w3-block w3-green w3-section w3-padding"
+                            type="submit">Reservar</button>
+                    </div>
+                </form>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button onclick="document.getElementById('reservation').style.display='none'" type="button"
+                        class="w3-button w3-red">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascript/funciones.js"></script>
+    <script src="javascript/conections.js"></script>
+</body>
+
+</html>
