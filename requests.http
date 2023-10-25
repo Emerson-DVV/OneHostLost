@@ -1,3 +1,5 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ users ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 ###
 POST http://localhost:9000/api/users HTTP/1.1
 Content-Type: application/json
@@ -21,63 +23,77 @@ Content-Type: application/json
 }
 ###
 DELETE http://localhost:9000/api/users/652c725733869b5c169f66fc HTTP/1.1
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ facilities ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 ###
-POST http://localhost:9000/api/classrooms HTTP/1.1
+POST http://localhost:9000/api/facilities HTTP/1.1
 Content-Type: application/json
 
 {
-    "classroom": "690A",
+    "name": "Data"
+}
+###
+GET http://localhost:9000/api/facilities HTTP/1.1
+###
+GET http://localhost:9000/api/facilities/Wi-fi HTTP/1.1
+###
+PUT http://localhost:9000/api/facilities/Data HTTP/1.1
+Content-Type: application/json
+
+{
+    "newName": "Data"
+}
+###
+DELETE http://localhost:9000/api/facilities/Data HTTP/1.1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ typeEnvironments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+###
+POST http://localhost:9000/api/typeEnvironments HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Piso"
+}
+###
+GET http://localhost:9000/api/typeEnvironments HTTP/1.1
+###
+GET http://localhost:9000/api/typeEnvironments/Piso HTTP/1.1
+###
+PUT http://localhost:9000/api/typeEnvironments/Piso HTTP/1.1
+Content-Type: application/json
+
+{
+    "newName": "Laboratorio"
+}
+###
+DELETE http://localhost:9000/api/typeEnvironments/Laboratorio HTTP/1.1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Environments ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+###
+POST http://localhost:9000/api/Environments HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "690A",
     "capacity": 50,
-    "description": "Es un aula mediana con acceso a data"
+    "description": "Es un aula mediana con buena ventilacion",
+    "active": true,
+    "enabled": true,
+    "typeEnvironment": "Aula",
+    "facility": ["Data"]
 }
 ###
-GET http://localhost:9000/api/classrooms HTTP/1.1
+GET http://localhost:9000/api/Environments HTTP/1.1
 ###
-GET http://localhost:9000/api/classrooms/65302c2ee131b15cedaf7f4a  HTTP/1.1
+GET http://localhost:9000/api/Environments/690A  HTTP/1.1
 ###
-PUT http://localhost:9000/api/classrooms/65302c2ee131b15cedaf7f4a HTTP/1.1
+PUT http://localhost:9000/api/Environments/690A HTTP/1.1
 Content-Type: application/json
 
 {
-    "classroom": "690X",
-    "capacity":45,
-    "description": "Es un aula mediana con acceso a data."
+    "newName":"690B",
+    "enabled": false
 }
 ###
-DELETE http://localhost:9000/api/classrooms/653039a1813bda651bb78984 HTTP/1.1
-###
-POST http://localhost:9000/api/states HTTP/1.1
-Content-Type: application/json
-
-{
-    "classroom": "652fd3b6c2d841d032938125",
-    "states":[
-        {
-            "date": "2023-10-18",
-            "hour": "12:45 - 2:15",
-            "type": "pendiente",
-            "user":"652b2568564ae20408bcc56a"
-        }
-    ]
-}
-###
-GET http://localhost:9000/api/states HTTP/1.1
-###
-GET http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
-###
-PUT http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
-Content-Type: application/json
-
-{
-    "classroom": "652fd3b6c2d841d032938125",
-    "states":[
-        {
-            "date": "2023-10-18",
-            "hour": "12:45 - 2:15",
-            "type": "Ocupado",
-            "user":"652b2568564ae20408bcc56a"
-        }
-    ]
-}
-###
-DELETE http://localhost:9000/api/states/652fe36f84a09efebed2b3da HTTP/1.1
+DELETE http://localhost:9000/api/Environments/690A HTTP/1.1

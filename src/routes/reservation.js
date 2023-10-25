@@ -1,45 +1,45 @@
 const express = require("express");
-const stateSchema = require("../models/state");
+const reservationSchema = require("../models/reservation");
 const router = express.Router();
 
-// create state
-router.post('/states', (req, res) => {
-    const state = new stateSchema(req.body);
-    state.save()
+// Crear reservacion
+router.post('/reservations', (req, res) => {
+    const reservation = new reservationSchema(req.body);
+    reservation.save()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-// get all states
-router.get('/states', (req, res) => {
-    stateSchema.find()
+// Obtener todas las reservas
+router.get('/reservations', (req, res) => {
+    reservationSchema.find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-// get a state
-router.get("/states/:id", (req, res)=>{
+// Obtener un reserva por ID
+router.get("/reservations/:id", (req, res)=>{
     const { id } = req.params;
-    stateSchema 
+    reservationSchema 
         .findById(id)
         .then((data) => res.json(data))
         .catch((error) => req.json({message: error}));
 });
 
-// update a state
-router.put("/states/:id", (req, res)=>{
+// Actualizar un reserva por ID
+router.put("/reservations/:id", (req, res)=>{
     const { id } = req.params;
     const {classroom, states} = req.body;
-    stateSchema 
+    reservationSchema 
         .updateOne({_id: id}, {$set: {classroom, states}})
         .then((data) => res.json(data))
         .catch((error) => req.json({message: error}));
 });
 
-// delete a state
-router .delete("/states/:id", (req, res)=>{
+// Eliminar una reserva por ID
+router .delete("/reservations/:id", (req, res)=>{
     const { id } = req.params;
-    stateSchema 
+    reservationSchema 
         .findByIdAndRemove(id)
         .then((data) => res.json(data))
         .catch((error) => req.json({message: error}));

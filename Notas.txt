@@ -29,3 +29,4 @@ El error que estás viendo indica un problema de política de mismo origen (CORS
 
 Para solucionar este problema, debes configurar tu servidor Node.js con Express para permitir solicitudes CORS desde tu aplicación web Frontend. Puedes hacer esto utilizando el middleware cors. Asegúrate de instalar primero el paquete cors si aún no lo has hecho:
 Luego, en tu archivo de servidor principal, donde configuras Express, puedes usar el middleware cors de la siguiente manera:
+

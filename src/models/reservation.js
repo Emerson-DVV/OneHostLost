@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const stateSchema = mongoose.Schema({
+const reservationSchema = mongoose.Schema({
     classroom :{
         type: mongoose.Schema.Types.ObjectId,
         ref : 'Classroom'
