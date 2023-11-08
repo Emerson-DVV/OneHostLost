@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/w3.css">
+</head>
+<body>
+    <header>
+        <div class="w3-container w3-green">
+            <h2 style="text-shadow:1px 1px 0 #444">Buscar Ambiente</h2>
+        </div>  
+    </header>
+    <div class="">
+        <div class="container-selects">
+            <select class="me-select" id="type">
+                <option value="">Todo</option>
+            </select>
+            <select class="me-select" id="capacity">
+                <option value="all">Todo</option>
+                <option value="10">10 personas</option>
+                <option value="20">20 personas</option>
+                <option value="30">30 personas</option>
+                <option value="40">40 personas</option>
+                <option value="50">50 personas</option>
+                <option value="more">Más...</option>
+            </select>
+        </div>
+        <button class="w3-button w3-green w3-round-large" id="find">Buscar</button>
+    </div>
+    <div calss="w3-container" id="resultC">
+
+    </div>
+    <script src="../javascript/buscarAmbientes.js"></script>
+</body>
+</html>

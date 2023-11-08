@@ -1,0 +1,4 @@
+mongoose    ->  npm install mongoose
+nodemon     ->  npm install nodemon -D
+dotenv      ->  npm install dotenv              
+views       ->  npm install pug

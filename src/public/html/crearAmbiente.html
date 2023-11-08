@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-bo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <title>Crear Ambiente</title>
+</head>
+<body>
+    <form id="form">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="capacity">Capacidad:</label>
+        <input type="number" name="capacity" required><br><br>
+
+        <label for="description">Descripción:</label>
+        <input type="text" name="description" required><br><br>
+
+        <label for="typeEnvironment">Tipo de Ambiente:</label>
+        <input type="text" id="typeEnvironment" name="typeEnvironment" required><br><br>
+
+<!--         <label for="facility">Facilidad:</label>
+        <input type="text" id="facility" name="facility"><br><br>
+ -->
+        <button type="button" onclick="createEnvironment()">Crear</button>
+    </form>
+    <script src="../javascript/crearAmbiente.js"></script>
+</body>
+</html>

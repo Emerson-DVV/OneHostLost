@@ -1,30 +1,26 @@
 const mongoose = require("mongoose");
 const reservationSchema = mongoose.Schema({
-    classroom :{
-        type: mongoose.Schema.Types.ObjectId,
-        ref : 'Classroom'
+    environment :{
+        type : String,
+        required: true
     },
-    states: [
-        {
-            date: {
-                type: Date,
-                required: true 
-            },
-            hour: {
-                type: String,
-                required: true
-            },
-            type: {
-                type: String,
-                required: true
-            },
-            user: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
-            }
-        }
-    ]
+    user: {
+        type: String,
+        required: true
+    },
+    date: {
+        type: Date,
+        required: true 
+    },
+    hour: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    }
 });
 
-const State = mongoose.model('State', stateSchema);
-module.exports = State; 
+const Reservation = mongoose.model('Reservation', reservationSchema);
+module.exports = Reservation; 

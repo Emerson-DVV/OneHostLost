@@ -53,7 +53,7 @@ POST http://localhost:9000/api/typeEnvironments HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Piso"
+    "name": "Auditorio"
 }
 ###
 GET http://localhost:9000/api/typeEnvironments HTTP/1.1
@@ -84,7 +84,7 @@ Content-Type: application/json
     "facility": ["Data"]
 }
 ###
-GET http://localhost:9000/api/Environments HTTP/1.1
+GET http://localhost:9000/api/Environments?type=Aula&capacity=50 HTTP/1.1
 ###
 GET http://localhost:9000/api/Environments/690A  HTTP/1.1
 ###
