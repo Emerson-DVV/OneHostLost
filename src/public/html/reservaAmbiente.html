@@ -21,7 +21,7 @@
         <div class="w3-container">
             <div class="w3-container w3-green">
                 <div class="w3-container w3-center">
-                    <h2 style="text-shadow:1px 1px 0 #444">Reserva de Aulas</h2>
+                    <h2 style="text-shadow:1px 1px 0 #444">Aulas</h2>
                 </div>
 
                 <div class="w3-dropdown-hover">
@@ -49,25 +49,25 @@
                                     <div class="w3-container">
                                         <h1>Editar Aula</h1>
                                         <label><b>Nombre de aula</b></label>
-                                        <input class="w3-input w3-border w3-margin-bottom" type="text"
+                                        <input id="editarNombre" =class="w3-input w3-border w3-margin-bottom" type="text"
                                             placeholder="Ingrese Nombre de Aula">
                                         <label><b>Capacidad</b></label>
-                                        <input class="w3-input w3-border w3-margin-bottom" type="number"
+                                        <input id="editarCapacidad" class="w3-input w3-border w3-margin-bottom" type="number"
                                             placeholder="Ingrese Capacidad">
                                         <label><b>Descripcion</b></label>
-                                        <input class="w3-input w3-border w3-margin-bottom" type="text"
+                                        <input id="editarDescripcion" class="w3-input w3-border w3-margin-bottom" type="text"
                                             placeholder="Ingrese Descripcion">
                                         <label><b>Facilidades</b></label>
                                         <div class="w3-input w3-margin-bottom">
-                                            <input class="w3-check w3-margin-top" type="checkbox"> Wi-fi
-                                            <input class="w3-check w3-margin-top" type="checkbox"> Data
+                                            <input id="editarWifi" class="w3-check w3-margin-top" type="checkbox"> Wi-fi
+                                            <input id="editarData" class="w3-check w3-margin-top" type="checkbox"> Data
                                         </div>
 
                                         <div class="w3-container w3-center">
-                                            <a href="vistaAula.html">
-                                                <button class="w3-button w3-green w3-round" type="submit">Editar
+                                            <!-- <a href="vistaAula.html"> -->
+                                                <button id="editarAula" class="w3-button w3-green w3-round" type="submit">Editar
                                                 </button>
-                                            </a>
+                                            <!-- </a> -->
                                             <a href="vistaAula.html">
                                                 <button class="w3-button w3-red w3-round" type="submit">Cancelar
                                                 </button>
@@ -94,14 +94,14 @@
                                         <h4>El aula se marcara como inactiva</h4>
 
                                         <div class="w3-container w3-center">
-                                            <a href="vistaAula.html">
-                                                <button class="w3-button w3-green w3-round" type="submit">Marcar
+                                            <!-- <a href="vistaAula.html"> -->
+                                                <button id="marcar"class="w3-button w3-green w3-round" type="submit">Marcar
                                                 </button>
-                                            </a>
-                                            <a href="vistaAula.html">
-                                                <button class="w3-button w3-red w3-round" type="submit">Cancelar
+                                            <!-- </a> -->
+                                            <!-- <a href="vistaAula.html"> -->
+                                                <button onclick="document.getElementById('eliminar').style.display='none'" class="w3-button w3-red w3-round" type="submit">Cancelar
                                                 </button>
-                                            </a>
+                                            <!-- </a> -->
                                         </div>
 
                                     </div>
@@ -115,8 +115,8 @@
                 <div class="inner-menu w3-row-padding">
                     <form method="POST">
                         <h4>Aula</h4>
-                        <select class="w3-select" id="select-aula" name="option">
-                            <option value="id690" disabled selected>Seleccionar aula</option>
+                        <select class="w3-select" id="select_aula" name="option">
+                            <option value="" disabled selected>Seleccionar aula</option>
                             <option value="">690</option>
                             <option value="">690A</option>
                             <option value="">690B</option>
@@ -200,6 +200,9 @@
                 </div>
             </div>
         </div>
-        <script src="../javascript/conections.js"></script>
+        <script src="javascript/vistaAula.js"></script>
+
+        <script src="javascript/eliminarAula.js"></script>
 </body>
+
 </html>

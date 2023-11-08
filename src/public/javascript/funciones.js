@@ -1,4 +1,3 @@
-
 const select = document.getElementById('capacidad');
 select.addEventListener('change', function () {
     if (select.value === 'ocultar') {
@@ -7,3 +6,5 @@ select.addEventListener('change', function () {
         select.style.display = 'block'; // Mostrar el select si no se selecciona "Ocultar"
     }
 });
+
+
