@@ -1,94 +1,55 @@
 <!DOCTYPE html>
 <html lang="es-BO">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/css/w3.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Crear Aula</title>
-  </head>
+  <link rel="stylesheet" href="../css/w3.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 
-  <body>
-    <div
-      class="w3-container w3-responsive w3-card-4 w3-modal-content w3-margin-top"
-    >
-      <div class="w3-container w3-green w3-center">
-        <h2>Crear Aulas</h2>
-      </div>
-      <div class="w3-container">
-        <div class="w3-section w3-padding">
-          <label><b>Nombre de aula</b></label>
-          <input
-            id="nuevo_nombreAula"
-            class="w3-input w3-border w3-margin-bottom"
-            type="text"
-            placeholder="Ingrese Nombre de Aula"
-            required
-          />
-          <label><b>Capacidad</b></label>
-          <input
-            id="nuevo_capacidad"
-            class="w3-input w3-border w3-margin-bottom"
-            type="number"
-            placeholder="Ingrese Capacidad"
-            required
-          />
-          <label><b>Descripcion</b></label>
-          <input
-            id="nuevo_descripcion"
-            class="w3-input w3-border w3-margin-bottom"
-            type="text"
-            placeholder="Ingrese Descripcion"
-            required
-          />
-          <label><b>Tipo de Aula</b></label>
-          <select id="tipoAula" class="w3-select w3-border w3-margin-bottom">
-            <option value="Aula">Aula</option>
-            <option value="Auditorio">Auditorio</option>
-            <!-- <option value="Otro">Opción 3</option> -->
-          </select>
+  <title>Crear Aula</title>
+</head>
 
-          <label><b>Facilidades</b></label>
-          <div class="w3-input w3-margin-bottom">
-            <input
-              id="nuevo_wifi"
-              class="w3-check w3-margin-top"
-              type="checkbox"
-            />
-            Wi-fi
-            <input
-              id="nuevo_data"
-              class="w3-check w3-margin-top"
-              type="checkbox"
-            />
-            Data
-          </div>
-
-          <div class="w3-container w3-center">
-            <!-- <a href="vistaAula.html"> -->
-              <button
-                id="botonCrear"
-                class="w3-button w3-green w3-round"
-                type="submit"
-              >
-                Crear
-              </button>
-            <!-- </a> -->
-            <!-- <a href="vistaAula.html"> -->
-              <button
-                id="botonCancelar"
-                class="w3-button w3-red w3-round"
-                type="submit"
-              >
-                Cancelar
-              </button>
-            <!-- </a> -->
-          </div>
+<body>
+  <div class="w3-container w3-responsive w3-card-4 w3-modal-content w3-margin-top">
+    <div class="w3-container w3-green w3-center">
+      <h2>Crear Aulas</h2>
+    </div>
+    <div class="w3-container">
+      <div class="w3-section w3-padding">
+        <label><b>Nombre de Ambiente</b></label>
+        <input id="hName" class="w3-input w3-border w3-margin-bottom" type="text"
+          placeholder="Ingrese Nombre de Ambiente" required />
+        <label><b>Capacidad</b></label>
+        <input id="hCapacity" class="w3-input w3-border w3-margin-bottom" type="number"
+          placeholder="Ingrese Capacidad" required />
+        <label><b>Descripcion</b></label>
+        <input id="hDescripcion" class="w3-input w3-border w3-margin-bottom" type="text"
+          placeholder="Ingrese Descripcion" required />
+        <label><b>Tipo de Aula</b></label>
+        <select id="type" class="w3-select w3-border w3-margin-bottom">
+          <!-- Se rellena dinamicamente -->
+        </select>
+        <label><b>Facilidades</b></label>
+        <div class="w3-input w3-margin-bottom" id="facilities">
+          <!-- Se rellena dinamicamente -->
+        </div>
+        <div class="w3-container w3-center">
+          <button id="botonCrear" class="w3-button w3-green w3-round" type="submit">
+            Crear
+          </button>
+          <button id="botonCancelar" class="w3-button w3-red w3-round" type="submit">
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
-    <script src="javascript/crearAula.js"></script>
-  </body>
+    <div id="message" class="w3-modal">
+      <!-- Mensaje se error o exito -->
+    </div>
+  </div>
+  <script src="../javascript/vistaCrear.js"></script>
+</body>
+
 </html>

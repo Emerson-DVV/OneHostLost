@@ -5,26 +5,21 @@ const createEnvironment = (req, res) => {
     const environment = new environmentSchema(req.body);
     environment.save()
         .then((data) => res.json(data))
-        .catch((error) => res.json({ message: error }));
+        .catch((error) => {
+            if(error.code === 11000){
+                res.status(400).json();
+            } else {
+                res.status(500).json();
+            }
+        });
 };
 
 // Obtener todos los ambientes o algunos por filtro
 const getFilteredEnvironments = (req, res) => {
     const {type, capacity } = req.query;
-    let filter = {
-        enabled: true
-    };
-    if(type && type !== 'all'){
-        filter.typeEnvironment = type;
-    }
-    if (capacity && capacity !=='all') {
-        if(capacity ==='more'){
-            filter.capacity = { $gte: 50 };
-        }else{
-            const lowerCapacity = parseInt(capacity) - 10;
-            filter.capacity = { $gt: lowerCapacity, $lte: parseInt(capacity) };
-        }  
-    }
+    let filter = {enabled: true};
+    if (type && type !== 'all'){filter.typeEnvironment = type;}
+    if (capacity) {filter.capacity = {$gte : parseInt(capacity)}}
     environmentSchema.find(filter)
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));

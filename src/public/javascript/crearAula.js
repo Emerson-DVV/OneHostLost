@@ -1,36 +1,9 @@
-
-// 
-//crear aula
-
-// const botonCrear = document.getElementById("botonCrear");
-
-// const name = document.getElementById("nuevo_nombreAula").value;
-// const capacity = document.getElementById("nuevo_capacidad").value;
-// const description = document.getElementById("nuevo_descripcion").value;
-// // const active = null;
-// // const enabled = null;
-// const typeEnvironment = document.getElementById("tipoAula");
-// const valorSeleccionado = typeEnvironment.value;
-
-
-// const data = document.getElementById("nuevo_data").value;
-// const wifi = document.getElementById("nuevo_wifi").value;
-
-// if (data.checked) {
-//   data = "Data";
-//   facility.push(data);
-// }
-// if (wifi.checked) {
-//   wifi = "Wifi"
-//   facility.push(wifi);
-// }
-// const facility = null;
 const url = "http://localhost:9000/api/";
 
 const botonCrear = document.getElementById("botonCrear");
 botonCrear.addEventListener("click", () => {
 
-  
+
 
   const name = document.getElementById("nuevo_nombreAula").value;
   const capacity = document.getElementById("nuevo_capacidad").value;
