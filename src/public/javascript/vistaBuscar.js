@@ -18,7 +18,7 @@ function loadTypeEnvironments() {
 function searchEnvironments(){
     const type = document.getElementById("type").value;
     const capacity = document.getElementById("capacity").value;
-    const container = document.getElementById("resultC");
+    const container = document.getElementById('contenedor');
     container.innerHTML = "";
 
     fetch(`/api/Environments?type=${type}&capacity=${capacity}`)
@@ -29,13 +29,17 @@ function searchEnvironments(){
             container.innerHTML = environments
                 .filter(environment => environment.active)
                 .map(environment => `
-                    <div class="w3-card">
-                        <h2>${environment.name}</h2>
-                        <p>Capacidad: ${environment.capacity}</p>
-                        <p>Descripción: ${environment.description}</p>
-                        <p>Tipo de ambiente: ${environment.typeEnvironment}</p>
-                        <p>Facilidades: ${environment.facility.join(", ")}</p>
-                    </div>
+                    <a href="vistaReservar.html?nombre=${environment.name}&amp;tipo=${environment.typeEnvironment}&amp;capacidad=${environment.capacity}&amp;descripcion=${environment.description}&amp;facilidades=${environment.facility.join(", ")}&amp;especifico=true" class="ambiente">
+                        <div class="ambiente-nombre">
+                            <h3 class="nombre">${environment.name}</h3>
+                        </div>
+                        <div class="ambiente-info">
+                            <p class="tipo-ambiente"><strong>Tipo de ambiente:</strong> ${environment.typeEnvironment}</p>
+                            <p class="capacidad"><strong>Capacidad:</strong> ${environment.capacity}</p>
+                            <p class="descripcion"><strong>Descripción:</strong> ${environment.description}</p>
+                            <p class="facilidades"><strong>Facilidades:</strong> ${environment.facility.join(", ")}</p>
+                        </div>
+                    </a>
                 `)
                 .join('');
         })
@@ -43,3 +47,4 @@ function searchEnvironments(){
             console.error("Error al obtener los datos del servidor", error);
         });
 }
+                    

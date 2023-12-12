@@ -97,3 +97,16 @@ Content-Type: application/json
 }
 ###
 DELETE http://localhost:9000/api/Environments/690A HTTP/1.1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Reservations ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+###
+POST http://localhost:9000/api/reservations HTTP/1.1
+Content-Type: application/json
+
+{
+    "environment": "690A",
+    "user": "Emerson",
+    "date": "2023-12-31T23:59:59.999Z",
+    "hour": "9:45-10:30",
+    "type": "Pendiente"
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Reservar Ambiente</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="../images/logo.png" alt="logo">
+        <h2 class="titulo">Reserva de Ambiente</h2>
+        <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <ul class="nav-list">
+                <li><a href="vistaUsuario.html">Inicio</a></li>
+                <li><a href="vistaBuscar.html">Buscar Ambientes</a></li>
+                <li><a href="vistaReservar.html">Reservar Ambiente</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="todo">
+            <div class="ambiente-info-reserva" id="ambiente-info-reserva">               
+                <!-- <h3 id="nombre">Nombre: 690A</h3>
+                <p id="tipo">Tipo: Aula</p>
+                <p id="capacidad">Capacidad: 50</p>
+                <p id="descripcion">Descripcion: Es un aula bonita</p>
+                <p id="facilidades">Facilidades: Wi-fi, Data</p>  -->    
+            </div>
+            <div class="seleccionar-ambiente" id="seleccionar-ambiente">
+                <button>Seleccionar Ambiente</button>
+            </div>
+            <div class="fecha">
+                <div>
+                    <h4>Seleccione la fecha de reserva.</h4>
+                </div>
+                <div> 
+                    <input id="fecha" type="date" required="true">
+                </div> 
+            </div>
+            <div class="periodos">
+                <div>
+                    <h4>Solo puede reservar 4 periodos.</h4>
+                </div>
+                <div class="periodos">
+                    <table id="tabla-periodos">
+                        <tr class="">
+                            <th>Horario</th>
+                        </tr>
+                        <tr>
+                            <td>6:45-7:30</td>
+                        </tr>
+                        <tr>
+                            <td>7:30-8:15</td>
+                        </tr>
+                        <tr>
+                            <td>8:15-9:00</td>
+                        </tr>
+                        <tr>
+                            <td>9:00-9:45</td>
+                        </tr>
+                        <tr>
+                            <td>9:45-10:30</td>
+                        </tr>
+                        <tr>
+                            <td>10:30-11:15</td>
+                        </tr>
+                        <tr>
+                            <td>11:15-12:00</td>
+                        </tr>
+                        <tr>
+                            <td>12:00-12:45</td>
+                        </tr>
+                        <tr>
+                            <td>12:45-13:30</td>
+                        </tr>
+                        <tr>
+                            <td>13:30-14:15</td>
+                        </tr>
+                        <tr>
+                            <td>14:15-15:00</td>
+                        </tr>
+                        <tr>
+                            <td>15:00-15:45</td>
+                        </tr>
+                        <tr>
+                            <td>15:45-16:30</td>
+                        </tr>
+                        <tr>
+                            <td>16:30-17:15</td>
+                        </tr>
+                        <tr>
+                            <td>17:15-18:00</td>
+                        </tr>
+                        <tr>
+                            <td>18:00-18:45</td>
+                        </tr>
+                        <tr>
+                            <td>18:45-19:30</td>
+                        </tr>
+                        <tr>
+                            <td>19:30-20:15</td>
+                        </tr>
+                        <tr>
+                            <td>20:15-21:00</td>
+                        </tr>
+                        <tr>
+                            <td>21:00-21:45</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="reservar-boton" id="reservar-boton">
+                <button>Reservar</button>
+            </div>
+        </div>
+    </main>
+    <script src="../javascript/menu.js"></script>
+    <script src="../javascript/vistaReservarPage.js"></script>
+    <script src="../javascript/vistaReservar.js"></script>
+</body>
+
+</html>

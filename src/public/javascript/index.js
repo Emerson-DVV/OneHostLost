@@ -43,7 +43,7 @@ botonIngresar.addEventListener("click", () => {
             });
 
             if (encontrado != null) {
-                window.location.href = "../html/buscarAmbiente.html";
+                window.location.href = "../html/vistaUsuario.html";
             } else {
                 alert("Datos incorrectos");
             }
@@ -89,7 +89,7 @@ botonAdmin.addEventListener("click", () => {
             });
 
             if (encontrado != null) {
-                window.location.href = "./html/peticionesAula.html";
+                window.location.href = "./html/vistaAdmin.html";
             } else {
                 alert("Datos incorrectos");
             }

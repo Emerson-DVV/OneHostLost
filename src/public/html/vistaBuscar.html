@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/w3.css">
+    <!-- <link rel="stylesheet" href="../css/w3.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
+
 <body>
+
     <header>
-        <div class="w3-container w3-green">
-            <h2 style="text-shadow:1px 1px 0 #444">Buscar Ambiente</h2>
-        </div>  
+        <img class="logo" src="../images/logo.png" alt="logo">
+        <h2>Buscar Ambiente</h2>
+        <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+            <ul class="nav-list">
+                <li><a href="vistaUsuario.html">Inicio</a></li>
+                <li><a href="vistaBuscar.html">Buscar Ambiente</a></li>
+                <li><a href="vistaReservar.html">Reservar Ambiente</a></li>
+            </ul>
+        </nav>
     </header>
-    <div class="">
-        <div class="container-selects">
+    <main>
+        <div class="contenedor-selects-boton">
             <select class="me-select" id="type">
                 <option value="all">Todo</option>
             </select>
@@ -26,12 +39,12 @@
                 <option value="50">50 personas</option>
                 <option value="50">Más...</option>
             </select>
+            <button class="boton-buscar" id="find">Buscar</button>
         </div>
-        <button class="w3-button w3-green w3-round-large" id="find">Buscar</button>
-    </div>
-    <div calss="w3-container" id="resultC">
-
-    </div>
+        <div class="contenedor" id="contenedor"></div>
+    </main>
+    <script src="../javascript/menu.js"></script>
     <script src="../javascript/vistaBuscar.js"></script>
 </body>
+
 </html>

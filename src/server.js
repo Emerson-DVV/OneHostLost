@@ -13,6 +13,7 @@ const userRoutes = require('./routes/user');
 const environmentRoutes = require('./routes/environment');
 const facilityRoutes =  require('./routes/facility');
 const typeEnvironmentRoutes =  require('./routes/typeEnvironment');
+const reservation = require('./routes/reservation');
 
 //Middlewares
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use('/api', userRoutes);
 app.use('/api', environmentRoutes);
 app.use('/api', facilityRoutes);
 app.use('/api', typeEnvironmentRoutes);
+app.use('/api', reservation);
 
 //Global variables
 

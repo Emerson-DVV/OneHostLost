@@ -6,7 +6,7 @@ const createEnvironment = (req, res) => {
     environment.save()
         .then((data) => res.json(data))
         .catch((error) => {
-            if(error.code === 11000){
+            if (error.code === 11000) {
                 res.status(400).json();
             } else {
                 res.status(500).json();
@@ -16,10 +16,10 @@ const createEnvironment = (req, res) => {
 
 // Obtener todos los ambientes o algunos por filtro
 const getFilteredEnvironments = (req, res) => {
-    const {type, capacity } = req.query;
-    let filter = {enabled: true};
-    if (type && type !== 'all'){filter.typeEnvironment = type;}
-    if (capacity) {filter.capacity = {$gte : parseInt(capacity)}}
+    const { type, capacity } = req.query;
+    let filter = { enabled: true };
+    if (type && type !== 'all') { filter.typeEnvironment = type; }
+    if (capacity) { filter.capacity = { $gte: parseInt(capacity) } }
     environmentSchema.find(filter)
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
@@ -36,17 +36,26 @@ const getEnvironmentByName = (req, res) => {
 // Actualizar un ambiente por nombre
 const updateEnvironmentByName = (req, res) => {
     const { name } = req.params;
-    const { newName, capacity, description, active, enabled, typeEnvironment, facility } = req.body;
+    const {
+        newName,
+        capacity,
+        description,
+        active,
+        enabled,
+        typeEnvironment,
+        facility } = req.body;
     environmentSchema.findOneAndUpdate({ name: name },
-        { $set: { 
-            name: newName, 
-            capacity, 
-            description, 
-            active, 
-            enabled, 
-            typeEnvironment, 
-            facility } 
-        }, 
+        {
+            $set: {
+                name: newName,
+                capacity,
+                description,
+                active,
+                enabled,
+                typeEnvironment,
+                facility
+            }
+        },
         { new: true })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
