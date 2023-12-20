@@ -1,73 +1,47 @@
 <!DOCTYPE html>
-<html lang="es-BO">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/w3.css" />
-    <link rel="stylesheet" href="./css/styles.css" />
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMSS</title>
-  </head>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
 
-  <body>
-    <!-- login -->
-    <div class="w3-container w3-center">
-      <div id="login">
-        <div class="w3-modal-content w3-card-4" style="max-width: 500px">
-          <div class="w3-center">
-            <br />
-            <img
-              src="/images/usuario.png"
-              alt="Avatar"
-              style="width: 30%"
-              class="w3-circle w3-margin-top"
-            />
-          </div>
-          <div class="w3-container">
-            <div class="w3-section">
-              <label><b>Nombre de Usuario</b></label>
-              <input
-                id="textoNombreUsuario"
-                class="w3-input w3-border w3-margin-bottom"
-                type="text"
-                placeholder="Ingrese Nombre de Usuario"
-              />
-              <label><b>Correo</b></label>
-              <input
-                id="textoCorreoUsuario"
-                class="w3-input w3-border"
-                type="email"
-                placeholder="Ingrese Correo"
-              />
-              <button
-                id="botonIngresar"
-                class="w3-button w3-block w3-green w3-section w3-padding"
-              >
-                Ingresar
-              </button>
-              <!-- </a> -->
-
-              <!-- <a href="peticionesAula.html"> -->
-              <button
-                id="botonAdmin"
-                class="w3-button w3-block w3-green w3-section w3-padding"
-              >
-                Admin
-              </button>
-              <!-- </a> -->
-
-              <input
-                class="w3-check w3-margin-top"
-                type="checkbox"
-                checked="checked"
-              />
-              Remember me
-            </div>
-          </div>
+<body>
+    <main>
+        <div class="logo-container">
+            <img src="./images/logo.png" alt="UMSS Logo" class="logo">
         </div>
-      </div>
-    </div>
-
+        <div class="formulario">
+            <div class="form-box" id="login-box">
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form">
+                    <input type="email" id="emailL" placeholder="Email">
+                    <input type="password" id="passwordL" placeholder="Contraseña">
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+            <div class="form-box" id="register-box" style="display: none;">
+                <h2>Registrarse</h2>
+                <form id="register-form">
+                    <input type="text" id="username" placeholder="Nombre de Usuario">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="password" id="password" placeholder="Contraseña">
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+        <div class="contenedor-links">
+            <div class="login">
+                <a href="#" onclick="mostrarFormulario('login')">Iniciar Sesión</a>
+            </div>
+            <div class="register">
+                <a href="#" onclick="mostrarFormulario('register')">Registrarse</a>
+            </div>
+        </div>
+    </main>
     <script src="./javascript/index.js"></script>
-    <!-- <script src="javascript/conections.js"></script> -->
-  </body>
+</body>
+
 </html>

@@ -15,8 +15,10 @@ const facilityRoutes = require('./routes/facility');
 const typeEnvironmentRoutes = require('./routes/typeEnvironment');
 const reservation = require('./routes/reservation');
 const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
 
 //Middlewares
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -25,8 +27,6 @@ app.use('/api', environmentRoutes);
 app.use('/api', facilityRoutes);
 app.use('/api', typeEnvironmentRoutes);
 app.use('/api', reservation);
-
-//Global variables
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')));

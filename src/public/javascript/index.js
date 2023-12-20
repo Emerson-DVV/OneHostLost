@@ -1,100 +1,84 @@
+function mostrarFormulario(form) {
+    var loginBox = document.getElementById('login-box');
+    var registerBox = document.getElementById('register-box');
 
+    if (form === 'login') {
+        loginBox.style.display = 'block';
+        registerBox.style.display = 'none';
+    } else if (form === 'register') {
+        loginBox.style.display = 'none';
+        registerBox.style.display = 'block';
+    }
+}
+document.getElementById('register-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevenir el comportamiento de envío predeterminado del formulario
 
-/**revisar que el texto ingresado este en la bd
- * si es usuario normal -> ingresar
- * si es admin -> vistas de admin
- *
- *
- *
- */
-const url = "http://localhost:9000/api/";
+    var usernameD = document.getElementById('username').value;
+    var emailD = document.getElementById('email').value;
+    var passwordD = document.getElementById('password').value;
 
-
-const botonIngresar = document.getElementById("botonIngresar");
-
-botonIngresar.addEventListener("click", () => {
-    //obtenemos los usuarios para verificar
-    fetch(url + "users")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("No se pudo obtener la respuesta del servidor");
-            }
-            return response.json(); // Puedes usar .json() en lugar de .text() si esperas una respuesta JSON.
+    fetch('/api/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: usernameD,
+            email: emailD,
+            password: passwordD
         })
-        .then((data) => {
-            console.log("Respuesta del servidor:", data);
-            const usuarioIngresado = document.getElementById("textoNombreUsuario").value;
-
-            const correoIngresada = document.getElementById("textoCorreoUsuario").value;
-
-            //funcion predicado
-            const encontrado = data.find((usuario) => {
-                const usuarioRespuesta = usuario.name;
-                const correoRespuesta = usuario.email;
-
-                if (
-                    usuarioIngresado == usuarioRespuesta &&
-                    correoIngresada == correoRespuesta
-                ) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-
-            if (encontrado != null) {
-                window.location.href = "../html/vistaUsuario.html";
-            } else {
-                alert("Datos incorrectos");
-            }
+    }).then(response => {
+        // Puedes verificar si el estatus de la respuesta es exitoso antes de redirigir
+        if (response.ok) {
+            return response.json();
+        } else {
+            // Si hay un error, lanzar un error que será capturado por el catch
+            throw new Error('Algo fue mal con la petición');
+        }
+    })
+        .then(data => {
+            // Manejo de la respuesta del servidor
+            console.log(data);
+            // Si el registro es exitoso, redirigir a 'vistaUsuario.html'
+            window.location.href = '../html/vistaUsuario.html';
         })
         .catch((error) => {
-            console.error("Error al realizar la solicitud:", error);
+            // Manejo de errores
+            console.error('Error:', error);
         });
 });
+document.getElementById('login-form').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevenir el comportamiento de envío predeterminado del formulario
 
+    var emailD = document.getElementById('emailL').value;
+    var passwordD = document.getElementById('passwordL').value;
 
-//admin
-const botonAdmin = document.getElementById("botonAdmin");
-
-botonAdmin.addEventListener("click", () => {
-    //obtenemos los usuarios para verificar
-    fetch(url + "users")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("No se pudo obtener la respuesta del servidor");
-            }
-            return response.json(); // Puedes usar .json() en lugar de .text() si esperas una respuesta JSON.
-            console.log("respuesta ok")
+    fetch('/api/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: emailD,
+            password: passwordD
         })
-        .then((data) => {
-            console.log("Respuesta del servidor:", data);
-            const usuarioIngresado = "admin";
-
-            const correoIngresada = "admin@email";
-
-            //funcion predicado
-            const encontrado = data.find((usuario) => {
-                const usuarioRespuesta = usuario.name;
-                const correoRespuesta = usuario.email;
-
-                if (
-                    usuarioIngresado == usuarioRespuesta &&
-                    correoIngresada == correoRespuesta
-                ) {
-                    return true;
-                } else {
-                    return false;
-                }
-            });
-
-            if (encontrado != null) {
-                window.location.href = "./html/vistaAdmin.html";
-            } else {
-                alert("Datos incorrectos");
-            }
+    }).then(response => {
+        // Puedes verificar si el estatus de la respuesta es exitoso antes de redirigir
+        if (response.ok) {
+            return response.json();
+        } else {
+            // Si hay un error, lanzar un error que será capturado por el catch
+            throw new Error('Algo fue mal con la petición');
+        }
+    })
+        .then(data => {
+            // Manejo de la respuesta del servidor
+            console.log(data);
+            // Si el registro es exitoso, redirigir a 'vistaUsuario.html'
+            window.location.href = '../html/vistaUsuario.html';
         })
         .catch((error) => {
-            console.error("Error al realizar la solicitud:", error);
+            // Manejo de errores
+            console.error('Error:', error);
         });
 });
